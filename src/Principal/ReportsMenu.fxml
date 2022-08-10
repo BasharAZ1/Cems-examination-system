@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+
+<SplitPane dividerPositions="0.5, 0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="430.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Principal.ReportsBoundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="530.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="197.0" prefHeight="72.0" prefWidth="163.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="Reports" />
+            <ImageView fitHeight="77.0" fitWidth="96.0" layoutX="-1.0" layoutY="-1.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="57.0" layoutX="467.0" layoutY="15.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="logOurBtn" layoutX="467.0" layoutY="8.0" mnemonicParsing="false" onAction="#logout" prefHeight="54.0" prefWidth="57.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="fullName" layoutX="344.0" layoutY="8.0" prefHeight="57.0" prefWidth="123.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+         </children>
+      </AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="530.0">
+         <children>
+            <Pane prefHeight="290.0" prefWidth="530.0" style="-fx-background-color: lavender;">
+               <children>
+                  <Label layoutX="164.0" layoutY="24.0" prefHeight="32.0" prefWidth="142.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Report for Course:" />
+                  <Label layoutX="164.0" layoutY="101.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Report for Teacher:" />
+                  <Label layoutX="164.0" layoutY="183.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Report for Student:" />
+                  <ComboBox fx:id="CourseList" layoutX="160.0" layoutY="56.0" prefHeight="25.0" prefWidth="150.0" promptText="Course" style="-fx-background-color: white;">
+                     <effect>
+                        <InnerShadow height="50.0" radius="12.0" width="0.0">
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect></ComboBox>
+                  <ComboBox fx:id="TeacherList" layoutX="160.0" layoutY="133.0" prefWidth="150.0" promptText="Teacher" style="-fx-background-color: white;">
+                     <effect>
+                        <InnerShadow height="50.0" radius="12.0" width="0.0">
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect></ComboBox>
+                  <ComboBox fx:id="StudentList" layoutX="160.0" layoutY="212.0" prefWidth="150.0" promptText="Student" style="-fx-background-color: white;">
+                     <effect>
+                        <InnerShadow height="50.0" radius="12.0" width="0.0">
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect></ComboBox>
+                  <ImageView fitHeight="38.0" fitWidth="41.0" layoutX="316.0" layoutY="50.0">
+                     <image>
+                         <Image url="@../reportIconBtn.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="cours" layoutX="316.0" layoutY="49.0" mnemonicParsing="false" onAction="#getCoursereport" prefHeight="38.0" prefWidth="41.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ImageView fitHeight="38.0" fitWidth="41.0" layoutX="316.0" layoutY="127.0">
+                     <image>
+                         <Image url="@../reportIconBtn.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Teacher" layoutX="316.0" layoutY="126.0" mnemonicParsing="false" onAction="#getTeacherreport" prefHeight="38.0" prefWidth="41.0" style="-fx-background-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ImageView fitHeight="38.0" fitWidth="41.0" layoutX="316.0" layoutY="206.0">
+                     <image>
+                         <Image url="@../reportIconBtn.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Student" layoutX="316.0" layoutY="206.0" mnemonicParsing="false" onAction="#getStudentreport" prefHeight="38.0" prefWidth="41.0" style="-fx-background-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="530.0" style="-fx-background-color: MEDIUMPURPLE;">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="89.0" layoutX="11.0" layoutY="17.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button fx:id="backBtn" layoutX="11.0" layoutY="17.0" mnemonicParsing="false" onAction="#back" prefHeight="47.0" prefWidth="89.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+  </items>
+</SplitPane>

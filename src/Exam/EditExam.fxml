@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+
+<SplitPane dividerPositions="0.5, 0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="430.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam.EditExam1Boundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="771.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="256.0" layoutY="1.0" prefHeight="72.0" prefWidth="259.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="Edit Exam Bank" />
+            <ImageView fitHeight="62.0" fitWidth="93.0" layoutX="14.0" layoutY="6.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="708.0" layoutY="14.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="logOutBn" layoutX="708.0" layoutY="12.0" mnemonicParsing="false" onAction="#logout" prefHeight="47.0" prefWidth="49.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="lblIndetifier" layoutX="610.0" layoutY="23.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-size: 13; -fx-font-family: Dubai; -fx-text-fill: purple;" text="name lastname" />
+         </children>
+      </AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="771.0">
+         <children>
+            <Pane layoutX="-3.0" layoutY="1.0" prefHeight="290.0" prefWidth="771.0" style="-fx-background-color: lavender;">
+               <children>
+                  <TableView fx:id="ExamSelect" layoutX="208.0" layoutY="44.0" prefHeight="203.0" prefWidth="532.0" style="-fx-border-color: purple;">
+                    <columns>
+                      <TableColumn fx:id="ExamId" prefWidth="133.0" text="Exam ID" />
+                        <TableColumn fx:id="executionCode" prefWidth="133.0" text="Execution Code" />
+                      <TableColumn fx:id="Subject" prefWidth="133.0" text="Subject" />
+                        <TableColumn fx:id="Course" prefWidth="133.0" text="Course" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="399.0" layoutY="9.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Choose exam to edit" />
+                  <ComboBox fx:id="SubjectList" layoutX="33.0" layoutY="44.0" onAction="#subjChoice" prefHeight="31.0" prefWidth="153.0" promptText="Exam Bank" style="-fx-background-color: white;">
+                     <effect>
+                        <InnerShadow height="50.0" radius="12.0" width="0.0">
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <ComboBox fx:id="CourseList" layoutX="33.0" layoutY="80.0" onAction="#QuestionGet" prefHeight="31.0" prefWidth="153.0" promptText="Course" style="-fx-background-color: white;">
+                     <effect>
+                        <InnerShadow height="50.0" radius="12.0" width="0.0">
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <Button fx:id="deleteExamBtn" layoutX="33.0" layoutY="146.0" mnemonicParsing="false" onAction="#deleteExam" prefHeight="31.0" prefWidth="153.0" style="-fx-background-color: white;" text="Delete Exam">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="21.0">
+                           <image>
+                               <Image url="@../delete%20icon.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="deleteBankBtn" layoutX="33.0" layoutY="210.0" mnemonicParsing="false" onAction="#deletBank" prefHeight="31.0" prefWidth="153.0" style="-fx-background-color: white;" text="Delete Bank">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="21.0">
+                           <image>
+                               <Image url="@../delete%20icon.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Line endX="76.99996948242188" layoutX="109.0" layoutY="130.0" startX="-76.99998474121094" />
+                  <Line endX="76.99996948242188" layoutX="108.0" layoutY="193.0" startX="-76.99998474121094" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="70.0" prefWidth="771.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="771.0" style="-fx-background-color: MEDIUMPURPLE;">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="100.0" layoutX="14.0" layoutY="12.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="47.0" fitWidth="100.0" layoutX="657.0" layoutY="12.0">
+                     <image>
+                         <Image url="@../editBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button fx:id="Editbtn" layoutX="657.0" layoutY="12.0" mnemonicParsing="false" onAction="#edit" prefHeight="47.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="backBtn" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#back" prefHeight="47.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+  </items>
+</SplitPane>

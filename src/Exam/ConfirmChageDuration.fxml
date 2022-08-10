@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+
+<SplitPane dividerPositions="0.5, 0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="429.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam.ConfirmChageDurationBoundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="697.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="224.0" prefHeight="72.0" prefWidth="311.0" style="-fx-font-family: Dubai; -fx-font-size: 33; -fx-text-fill: purple;" text="Change Exam Duration" />
+            <ImageView accessibleRole="BUTTON" fitHeight="45.0" fitWidth="49.0" layoutX="634.0" layoutY="14.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="77.0" fitWidth="109.0" layoutX="14.0" layoutY="-3.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <Button id="logOutBtn" fx:id="logOutBtn" layoutX="634.0" layoutY="13.0" mnemonicParsing="false" onAction="#logout" prefHeight="45.0" prefWidth="49.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="694.0" style="-fx-background-color: lavender;">
+         <children>
+            <Pane layoutX="2.0" prefHeight="267.0" prefWidth="744.0" style="-fx-background-color: lavender;">
+               <children>
+                  <Label layoutX="131.0" layoutY="15.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Chose teacher request" />
+                  <TreeTableView layoutX="21.0" layoutY="46.0" prefHeight="200.0" prefWidth="384.0" style="-fx-border-color: purple;">
+                    <columns>
+                      <TreeTableColumn fx:id="ExamIDChangeTime" prefWidth="84.0" text="Exam ID" />
+                      <TreeTableColumn fx:id="subChangeTime" text="Subject" />
+                        <TreeTableColumn fx:id="PtimeChangeTime" prefWidth="125.0" text="Previous time" />
+                        <TreeTableColumn fx:id="NTimeChangeTime" prefWidth="93.0" text="New time" />
+                    </columns>
+                  </TreeTableView>
+                  <Button id="ApproveChangeBtn" fx:id="ApproveChangeBtn" layoutX="461.0" layoutY="207.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Approve">
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0">
+                           <image>
+                               <Image url="@../approveBtn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="viewReasonBtn" layoutX="506.0" layoutY="15.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: white;" text="View reason">
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="DenyChangeBtn" layoutX="585.0" layoutY="207.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" style="-fx-background-color: white;" text="Deny">
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <graphic>
+                        <ImageView id="DenyChangeBtn" fx:id="DenyChangeBtn" fitHeight="24.0" fitWidth="22.0">
+                           <image>
+                               <Image url="@../denyBtn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextArea id="reason" fx:id="reason" layoutX="461.0" layoutY="60.0" prefHeight="134.0" prefWidth="211.0" style="-fx-border-color: purple; -fx-background-color: white;" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="687.0" style="-fx-background-color: MEDIUMPURPLE;">
+               <children>
+                  <ImageView accessibleRole="BUTTON" fitHeight="47.0" fitWidth="106.0" layoutX="14.0" layoutY="14.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="saveChangeBtn" accessibleRole="BUTTON" fitHeight="47.0" fitWidth="106.0" layoutX="580.0" layoutY="15.0">
+                     <image>
+                         <Image url="@../saveBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button id="backChangeBtn" fx:id="backChangeBtn" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="saveChangeBtn" fx:id="saveChangeBtn" layoutX="580.0" layoutY="15.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+  </items>
+</SplitPane>

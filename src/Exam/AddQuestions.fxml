@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+
+<SplitPane dividerPositions="0.16442953020134227, 0.5620805369127516" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="670.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam.AddQuestionsBoundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="903.0">
+         <children>
+            <Label layoutX="343.0" layoutY="9.0" prefHeight="72.0" prefWidth="231.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="Add Question" />
+            <ImageView fitHeight="57.0" fitWidth="72.0" layoutX="832.0" layoutY="15.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="98.0" fitWidth="130.0" layoutX="1.0" layoutY="-6.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutAddQBtn" layoutX="840.0" layoutY="13.0" mnemonicParsing="false" onAction="#logout" prefHeight="54.0" prefWidth="56.0" style="-fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="lblIndetifier" layoutX="734.0" layoutY="28.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-size: 13; -fx-font-family: Dubai; -fx-text-fill: purple;" text="name lastname" />
+         </children></AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="909.0" style="-fx-background-color: lavender;">
+         <children>
+            <TextArea fx:id="QuestionTxt" layoutX="52.0" layoutY="59.0" prefHeight="156.0" prefWidth="517.0" promptText="Enter Question" style="-fx-border-color: purple;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextArea>
+            <TextArea fx:id="Option1Txt" layoutX="53.0" layoutY="245.0" prefHeight="43.0" prefWidth="516.0" promptText="Answer 1" style="-fx-border-color: purple;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextArea>
+            <TextArea fx:id="Option3Txt" layoutX="53.0" layoutY="346.0" prefHeight="43.0" prefWidth="515.0" promptText="Answer 3" style="-fx-border-color: purple;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextArea>
+            <TextArea fx:id="Option4Txt" layoutX="53.0" layoutY="396.0" prefHeight="43.0" prefWidth="516.0" promptText="Answer 4" style="-fx-border-color: purple;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextArea>
+            <TextArea fx:id="Option2Txt" layoutX="53.0" layoutY="296.0" prefHeight="43.0" prefWidth="515.0" promptText="Answer 2" style="-fx-border-color: purple;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextArea>
+            <ComboBox fx:id="subjectBox" layoutX="52.0" layoutY="21.0" onAction="#subjChoice" prefWidth="150.0" promptText="Subject" style="-fx-background-color: white;">
+               <effect>
+                  <InnerShadow height="50.0" radius="12.0" width="0.0">
+                     <color>
+                        <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Choose a subject that this question will belong to" />
+               </tooltip>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <ComboBox fx:id="CorrectAnBtn" layoutX="54.0" layoutY="454.0" prefWidth="150.0" promptText="correct answer" style="-fx-background-color: white;">
+               <effect>
+                  <InnerShadow height="50.0" radius="12.0" width="0.0">
+                     <color>
+                        <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Choose the number of the correct answer for this question" />
+               </tooltip>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Line endX="-99.888916015625" endY="317.111083984375" layoutX="719.0" layoutY="168.0" startX="-99.888916015625" startY="-149.55555725097656" />
+            <ComboBox fx:id="courseBox" layoutX="242.0" layoutY="21.0" onAction="#AddCours" prefWidth="150.0" promptText="Course" style="-fx-background-color: white;">
+               <effect>
+                  <InnerShadow height="50.0" radius="12.0" width="0.0">
+                     <color>
+                        <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Choose a course that this question will belong to (you can choose multiple courses under same subject)" />
+               </tooltip>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
+            <TableView fx:id="SelectedCourse" layoutX="666.0" layoutY="61.0" prefHeight="381.0" prefWidth="200.0" style="-fx-border-color: purple;">
+              <columns>
+                <TableColumn fx:id="c1" prefWidth="199.20001220703125" text="Courses" />
+              </columns>
+               <tooltip>
+                  <Tooltip text="This question will belong to the following courses" />
+               </tooltip>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </TableView>
+            <Button fx:id="RemoveCourse" layoutX="710.0" layoutY="454.0" mnemonicParsing="false" onAction="#Remove" prefHeight="19.0" prefWidth="112.0" style="-fx-background-color: white;" text="Remove Course">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Click on the course you want to remove from the list and then click Remove Course" />
+               </tooltip>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="22.0" layoutY="26.0" text="(?)">
+               <tooltip>
+                  <Tooltip text="To create a new question, you must choose a question bank (subject) that this question will belong to and at least one course" />
+               </tooltip>
+            </Label>
+         </children></AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: MEDIUMPURPLE;">
+         <items>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="892.0">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="113.0" layoutX="7.0" layoutY="9.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="54.0" fitWidth="113.0" layoutX="769.0" layoutY="10.0">
+                     <image>
+                         <Image url="@../saveBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button fx:id="saveBtn" layoutX="774.0" layoutY="16.0" mnemonicParsing="false" onAction="#savebtn" prefHeight="44.0" prefWidth="101.0" style="-fx-background-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="backBtn" layoutX="13.0" layoutY="15.0" mnemonicParsing="false" onAction="#backbtn" prefHeight="44.0" prefWidth="101.0" style="-fx-background-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children></AnchorPane>
+         </items>
+      </SplitPane>
+  </items>
+</SplitPane>

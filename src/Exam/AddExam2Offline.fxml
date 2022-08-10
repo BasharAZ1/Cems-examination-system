@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+
+<SplitPane dividerPositions="0.16442953020134227, 0.5620805369127516" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="670.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam.AddOfflineExam">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="903.0">
+         <children>
+            <Label fx:id="lblIndetifier" layoutX="738.0" layoutY="28.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-size: 13; -fx-font-family: Dubai; -fx-text-fill: purple;" text="name lastname" />
+            <Label layoutX="307.0" layoutY="4.0" prefHeight="72.0" prefWidth="289.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="Add Offline Exam" />
+            <ImageView fitHeight="94.0" fitWidth="153.0" layoutX="-2.0" layoutY="-5.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="65.0" layoutX="836.0" layoutY="14.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logOutBtn" layoutX="842.0" layoutY="10.0" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="54.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children></AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="909.0" style="-fx-background-color: lavender;">
+         <children>
+            <Label layoutX="261.0" layoutY="164.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Enter an exam duration :">
+               <tooltip>
+                  <Tooltip text="Choose a duration for the exam in minutes" />
+               </tooltip></Label>
+            <Label layoutX="246.0" layoutY="163.0" prefHeight="10.0" prefWidth="14.0" style="-fx-font-size: 30; -fx-text-fill: red; -fx-font-weight: bold;" text="*">
+               <tooltip>
+                  <Tooltip text="Obligatory!" />
+               </tooltip>
+            </Label>
+            <Label layoutX="261.0" layoutY="219.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Enter an execution code :">
+               <tooltip>
+                  <Tooltip text="Choose an execution code for the exam (4 alphanumeric characters)" />
+               </tooltip></Label>
+            <TextField fx:id="DurationTextField" layoutX="449.0" layoutY="167.0" prefHeight="23.0" prefWidth="124.0" style="-fx-border-color: red;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="ExecutionCodeTextField" layoutX="449.0" layoutY="222.0" prefHeight="23.0" prefWidth="124.0" style="-fx-border-color: red;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <Label layoutX="246.0" layoutY="218.0" prefHeight="10.0" prefWidth="14.0" style="-fx-font-size: 30; -fx-text-fill: red; -fx-font-weight: bold;" text="*">
+               <tooltip>
+                  <Tooltip text="Obligatory!" />
+               </tooltip>
+            </Label>
+            <ProgressIndicator layoutX="437.0" layoutY="437.0" progress="1.0" />
+            <Button fx:id="generateExecCode" layoutX="582.0" layoutY="223.0" mnemonicParsing="false" onAction="#generateExecCode" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: white;" text="Generate code">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Generate a unique execution code" />
+               </tooltip>
+            </Button>
+         </children></AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: MEDIUMPURPLE;">
+         <items>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="892.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="135.0" layoutX="10.0" layoutY="8.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button id="UploadExamBtn" fx:id="BackBtn" layoutX="11.0" layoutY="8.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="60.0" prefWidth="135.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ImageView fitHeight="60.0" fitWidth="135.0" layoutX="746.0" layoutY="10.0">
+                     <image>
+                         <Image url="@../saveBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button id="UploadExamBtn" fx:id="SaveBtn" layoutX="746.0" layoutY="10.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="60.0" prefWidth="135.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children></AnchorPane>
+         </items>
+      </SplitPane>
+  </items>
+</SplitPane>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+
+<SplitPane dividerPositions="0.5, 0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="430.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam.GradeApproval2Boundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="530.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="115.0" layoutY="-1.0" prefHeight="72.0" prefWidth="342.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="Grade Approval" />
+            <ImageView fitHeight="77.0" fitWidth="100.0" layoutX="-2.0" layoutY="3.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView accessibleRole="BUTTON" fitHeight="45.0" fitWidth="49.0" layoutX="483.0" layoutY="16.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="logoutbtn" layoutX="490.0" layoutY="13.0" mnemonicParsing="false" onAction="#logout" prefHeight="45.0" prefWidth="34.0" style="-fx-border-color: transparent; -fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="lblIndetifier" layoutX="392.0" layoutY="23.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-size: 13; -fx-font-family: Dubai; -fx-text-fill: purple;" text="name lastname" />
+         </children>
+      </AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="530.0">
+         <children>
+            <Pane prefHeight="290.0" prefWidth="530.0" style="-fx-background-color: lavender;">
+               <children>
+                  <Label layoutX="108.0" layoutY="14.0" prefHeight="32.0" prefWidth="120.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Choose student" />
+                  <TableView fx:id="studentsTabel" layoutX="14.0" layoutY="45.0" prefHeight="200.0" prefWidth="308.0" style="-fx-border-color: purple;">
+                    <columns>
+                      <TableColumn fx:id="StuIDField" prefWidth="124.66665267944336" text="Student ID" />
+                      <TableColumn fx:id="GradeField" prefWidth="54.66668701171875" text="Grade" />
+                        <TableColumn fx:id="SuspOfCheat" prefWidth="125.33332824707031" text="Suspicion of cheating" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="ApprGradeBtn" layoutX="372.0" layoutY="120.0" mnemonicParsing="false" onAction="#Approve" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: white;" text="Approve Grade">
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="ViewExamBtn" layoutX="372.0" layoutY="45.0" mnemonicParsing="false" onAction="#ViewExam" prefHeight="18.0" prefWidth="120.0" style="-fx-background-color: white;" text="View Exam">
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <TextField fx:id="TeacherComm" alignment="TOP_LEFT" layoutX="329.0" layoutY="158.0" prefHeight="87.0" prefWidth="190.0" promptText="Enter Comment (optional)" style="-fx-border-color: purple; -fx-background-color: white;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></TextField>
+                  <Button fx:id="ChangeGradeBtn" layoutX="372.0" layoutY="82.0" mnemonicParsing="false" onAction="#ChangeGrade" prefHeight="10.0" prefWidth="120.0" style="-fx-background-color: white;" text="Change Grade">
+                     <effect>
+                        <InnerShadow>
+                           <color>
+                              <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="530.0" style="-fx-background-color: MEDIUMPURPLE;">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="100.0" layoutX="6.0" layoutY="14.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button fx:id="backbtn" layoutX="8.0" layoutY="15.0" mnemonicParsing="false" onAction="#Back" prefHeight="46.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+  </items>
+</SplitPane>

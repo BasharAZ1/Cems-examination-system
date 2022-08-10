@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+
+<SplitPane dividerPositions="0.13333333333333333, 0.6288288288288288" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.StudentViewGradeBoundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="576.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="183.0" layoutY="1.0" prefHeight="72.0" prefWidth="211.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="View Grades" />
+            <ImageView fitHeight="77.0" fitWidth="100.0" layoutY="-2.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="54.0" layoutX="515.0" layoutY="13.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutViewGradesBtn" layoutX="508.0" layoutY="13.0" mnemonicParsing="false" onAction="#logout" prefHeight="47.0" prefWidth="54.0" style="-fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="fullName" layoutX="410.0" layoutY="7.0" prefHeight="57.0" prefWidth="115.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+         </children>
+      </AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="586.0">
+         <children>
+            <Pane prefHeight="437.0" prefWidth="586.0" style="-fx-background-color: lavender;">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="43.0" layoutX="269.0" layoutY="349.0">
+                     <image>
+                         <Image url="@../viewCopyBtn.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="249.0" layoutY="312.0" style="-fx-font-family: Dubai Light; -fx-font-size: 16; -fx-text-fill: purple;" text="Retrieve copy" />
+                  <Line endX="411.0" layoutX="125.0" layoutY="295.0" startX="-75.00000762939453" />
+                  <Button fx:id="StudRetCopyBtn" layoutX="269.0" layoutY="349.0" mnemonicParsing="false" onAction="#viewCopy" prefHeight="47.0" prefWidth="43.0" style="-fx-background-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TableView fx:id="ExamSelect" layoutX="35.0" layoutY="38.0" prefHeight="233.0" prefWidth="520.0" style="-fx-border-color: purple;">
+                     <columns>
+                        <TableColumn fx:id="ExamId" prefWidth="130.0" text="Exam ID" />
+                        <TableColumn fx:id="Subject" prefWidth="130.0" text="Subject" />
+                        <TableColumn fx:id="Course" prefWidth="130.0" text="Course" />
+                        <TableColumn fx:id="Grade" prefWidth="130.0" text="Grade" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="214.0" layoutY="6.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Choose exam to view" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="99.0" prefWidth="668.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="578.0" style="-fx-background-color: MEDIUMPURPLE;">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="backVie" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="47.0" prefWidth="105.0" style="-fx-background-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+  </items>
+</SplitPane>

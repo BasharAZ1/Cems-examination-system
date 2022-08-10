@@ -1,15 +1,4 @@
-Thank you for using CEMS system.
-
-Precondition for using the system:
-1. In C Drive, open two new folders: CEMS_server, CEMS_client.
-2. In CEMS_server, open a new folder: External. In External folder put all the csv files that came with the project.
-3. When client receives files from the server, they are saved under C://CEMS_client
-Further details: (*).
-4. The password for MySQL should be Aa123456
-5. in order to see the pictures you have to change the path in fxml files to ..\src\resources
-
-
-(*) Thank you for using CEMS server. Here are a few things you need to know:
+Thank you for using CEMS server. Here are a few things you need to know:
 
 Preconditions for using the system:
 1. In MYSQL load our sceme "cems".

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+
+<SplitPane dividerPositions="0.16442953020134227, 0.5620805369127516" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="670.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam.AddExam2Boundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="903.0">
+         <children>
+            <Label layoutX="363.0" layoutY="7.0" prefHeight="72.0" prefWidth="172.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="Add Exam" />
+            <ImageView fitHeight="94.0" fitWidth="153.0" layoutX="-2.0" layoutY="-5.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="65.0" layoutX="836.0" layoutY="14.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logOutBtn" layoutX="842.0" layoutY="10.0" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="54.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="lblIndetifier" layoutX="744.0" layoutY="28.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-size: 13; -fx-font-family: Dubai; -fx-text-fill: purple;" text="name lastname" />
+         </children></AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="909.0" style="-fx-background-color: lavender;">
+         <children>
+            <Label layoutX="297.0" layoutY="70.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Enter an exam duration :">
+               <tooltip>
+                  <Tooltip text="Choose a duration for the exam in minutes" />
+               </tooltip></Label>
+            <Label layoutX="282.0" layoutY="69.0" prefHeight="10.0" prefWidth="14.0" style="-fx-font-size: 30; -fx-text-fill: red; -fx-font-weight: bold;" text="*">
+               <tooltip>
+                  <Tooltip text="Obligatory!" />
+               </tooltip>
+            </Label>
+            <Label layoutX="297.0" layoutY="125.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Enter an execution code :">
+               <tooltip>
+                  <Tooltip text="Choose an execution code for the exam (4 alphanumeric characters)" />
+               </tooltip></Label>
+            <Label layoutX="294.0" layoutY="186.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Add comments for students :">
+               <tooltip>
+                  <Tooltip text="Add optional comment for students" />
+               </tooltip></Label>
+            <Label layoutX="294.0" layoutY="334.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Add comments for teacher :">
+               <tooltip>
+                  <Tooltip text="Add optional comment only for teachers to see" />
+               </tooltip></Label>
+            <TextField fx:id="DurationTextField" layoutX="485.0" layoutY="73.0" prefHeight="23.0" prefWidth="124.0" style="-fx-border-color: red;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="ExecutionCodeTextField" layoutX="485.0" layoutY="128.0" prefHeight="23.0" prefWidth="124.0" style="-fx-border-color: red;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextArea fx:id="CommentsStudentsTextField" layoutX="510.0" layoutY="191.0" prefHeight="126.0" prefWidth="216.0" style="-fx-border-color: purple;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextArea>
+            <TextArea fx:id="CommentsTeacherTextField" layoutX="510.0" layoutY="337.0" prefHeight="126.0" prefWidth="216.0" style="-fx-border-color: purple;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextArea>
+            <Label layoutX="257.0" layoutY="122.0" prefHeight="10.0" prefWidth="14.0" style="-fx-font-size: 30; -fx-text-fill: red; -fx-font-weight: bold;" text="*">
+               <tooltip>
+                  <Tooltip text="Obligatory!" />
+               </tooltip>
+            </Label>
+            <ProgressIndicator layoutX="438.0" layoutY="447.0" progress="0.66" />
+            <Button fx:id="generateExecCode" layoutX="618.0" layoutY="129.0" mnemonicParsing="false" onAction="#generateExecCode" prefHeight="31.0" prefWidth="124.0" style="-fx-background-color: white;" text="Generate code">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Generate a unique execution code" />
+               </tooltip>
+            </Button>
+            <Label layoutX="271.0" layoutY="125.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="(?)">
+               <tooltip>
+                  <Tooltip text="Choose an execution code for the exam (4 alphanumeric characters)" />
+               </tooltip>
+            </Label>
+         </children></AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: MEDIUMPURPLE;">
+         <items>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="892.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="135.0" layoutX="10.0" layoutY="8.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button id="UploadExamBtn" fx:id="EditBtn" layoutX="13.0" layoutY="8.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="60.0" prefWidth="135.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ImageView fitHeight="60.0" fitWidth="135.0" layoutX="751.0" layoutY="10.0">
+                     <image>
+                         <Image url="@../nextBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button id="UploadExamBtn" fx:id="NextBtn" layoutX="755.0" layoutY="11.0" mnemonicParsing="false" onAction="#NextButton" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children></AnchorPane>
+         </items>
+      </SplitPane>
+  </items>
+</SplitPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.16442953020134227, 0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="670.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam.ViewExamCopyBoundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="903.0">
+         <children>
+            <Label layoutX="361.0" layoutY="8.0" prefHeight="72.0" prefWidth="182.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="View Exam" />
+            <ImageView fitHeight="94.0" fitWidth="153.0" layoutY="-3.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="loginOnlBtn" fitHeight="60.0" fitWidth="65.0" layoutX="841.0" layoutY="13.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutOnlineExamBtn" layoutX="848.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" prefHeight="45.0" prefWidth="49.0" style="-fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="lblIndetifier" layoutX="750.0" layoutY="24.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-size: 13; -fx-font-family: Dubai; -fx-text-fill: purple;" text="name lastname" />
+         </children></AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="909.0" style="-fx-background-color: lavender;">
+         <children>
+            <Label fx:id="course" layoutX="418.0" layoutY="24.0" style="-fx-font-family: Dubai Light; -fx-font-size: 14; -fx-text-fill: purple;" text="Course name" />
+            <Label fx:id="teacherName" layoutX="588.0" layoutY="24.0" style="-fx-font-family: Dubai Light; -fx-font-size: 14; -fx-text-fill: purple;" text="Teacher name" />
+            <Label fx:id="subject" layoutX="241.0" layoutY="24.0" style="-fx-font-family: Dubai Light; -fx-font-size: 14; -fx-text-fill: purple;" text="Subject name" />
+            <Label fx:id="teacherCmt" layoutX="24.0" layoutY="55.0" prefHeight="35.0" prefWidth="397.0" style="-fx-font-family: Dubai Light; -fx-font-size: 14; -fx-text-fill: purple;" text="Comment for teacher:  " />
+            <Label fx:id="studentCmt" layoutX="24.0" layoutY="84.0" prefHeight="35.0" prefWidth="397.0" style="-fx-font-family: Dubai Light; -fx-font-size: 14; -fx-text-fill: purple;" text="Comment for students: " />
+            <Label fx:id="GradeSys" layoutX="24.0" layoutY="24.0" style="-fx-font-family: Dubai Light; -fx-font-size: 14; -fx-text-fill: purple;" text="System Grade:" />
+            <ScrollPane fx:id="sPane" layoutX="13.0" layoutY="119.0" prefHeight="367.0" prefWidth="884.0" style="-fx-border-color: red;">
+               <content>
+                  <AnchorPane prefHeight="352.0" prefWidth="842.0">
+                     <children>
+                        <VBox fx:id="VBContainer" layoutX="2.0" layoutY="2.0" prefHeight="360.0" prefWidth="876.0" style="-fx-background-color: lavender;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children></AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: MEDIUMPURPLE;">
+         <items>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="892.0">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="139.0" layoutX="6.0" layoutY="12.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="backBtn" layoutX="8.0" layoutY="12.0" mnemonicParsing="false" onAction="#back" prefHeight="54.0" prefWidth="135.0" style="-fx-background-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+  </items>
+</SplitPane>

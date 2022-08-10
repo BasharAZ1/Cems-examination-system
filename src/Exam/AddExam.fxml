@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+
+<SplitPane dividerPositions="0.16442953020134227, 0.5620805369127516" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="756.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Exam.AddExamsBoundary">
+  <items>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="903.0">
+         <children>
+            <Label layoutX="368.0" layoutY="2.0" prefHeight="72.0" prefWidth="168.0" style="-fx-font-family: Dubai; -fx-font-size: 40; -fx-text-fill: purple;" text="Add Exam" />
+            <ImageView fitHeight="98.0" fitWidth="130.0" layoutX="-1.0" layoutY="-7.0">
+               <image>
+                   <Image url="@../logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="65.0" layoutX="824.0" layoutY="10.0">
+               <image>
+                   <Image url="@../logoutBtn.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logOutBtn" layoutX="824.0" layoutY="8.0" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="65.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="lblIndetifier" layoutX="726.0" layoutY="26.0" prefHeight="25.0" prefWidth="98.0" style="-fx-font-size: 13; -fx-font-family: Dubai; -fx-text-fill: purple;" text="name lastname" />
+         </children></AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="909.0" style="-fx-background-color: lavender;">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="120.0" layoutX="337.0" layoutY="237.0">
+               <image>
+                   <Image url="@../purpleArrow2.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="110.0" layoutX="386.0" layoutY="136.0">
+               <image>
+                   <Image url="@../purpleArrow%20-%20Copy.PNG" />
+               </image>
+            </ImageView>
+            <Label layoutX="68.0" layoutY="94.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="Select questions to add to exam:">
+               <tooltip>
+                  <Tooltip text="Add questions to the exam by clicking on the desired question and then clicking Add" />
+               </tooltip></Label>
+            <ComboBox id="ExamBankComboBox" fx:id="ExamBankComboBox" cache="true" layoutX="238.0" layoutY="34.0" onAction="#subjChoice" prefHeight="30.0" prefWidth="182.0" promptText="Bank" style="-fx-background-color: white;">
+               <tooltip>
+                  <Tooltip text="Choose an exam bank that this exam will belong to" />
+               </tooltip>
+               <effect>
+                  <InnerShadow height="50.0" radius="12.0" width="0.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <ComboBox id="CourseComboBox" fx:id="CourseComboBox" cache="true" layoutX="443.0" layoutY="33.0" onAction="#QuestionGet" prefHeight="30.0" prefWidth="182.0" promptText="Course" style="-fx-background-color: white;">
+               <tooltip>
+                  <Tooltip text="Choose a course that this exam will belongs to" />
+               </tooltip>
+               <effect>
+                  <InnerShadow height="50.0" radius="12.0" width="0.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Label layoutX="218.0" layoutY="31.0" prefHeight="10.0" prefWidth="14.0" style="-fx-font-size: 30; -fx-text-fill: red; -fx-font-weight: bold;" text="*">
+               <tooltip>
+                  <Tooltip text="Obligatory!" />
+               </tooltip>
+            </Label>
+            <TableView id="SelectQuestionTable" fx:id="SelectQuestionTable" layoutX="29.0" layoutY="124.0" prefHeight="181.0" prefWidth="309.0" style="-fx-border-color: Purple; -fx-border-width: 2;">
+               <columns>
+                  <TableColumn fx:id="QuestionID" prefWidth="78.4000244140625" text="QuestionID" />
+                  <TableColumn fx:id="QuestionName" prefWidth="271.1999816894531" text="Question name" />
+               </columns>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </TableView>
+            <TableView id="QuestionInExamTable" fx:id="QuestionInExamTable" layoutX="497.0" layoutY="123.0" prefHeight="187.0" prefWidth="378.0" style="-fx-border-color: Purple; -fx-border-width: 2;">
+               <columns>
+                  <TableColumn fx:id="QuestionsIDS" prefWidth="103.55560302734375" text="QuestionID" />
+                  <TableColumn fx:id="QuestionsNameS" minWidth="0.0" prefWidth="201.0" text="Question name" />
+                  <TableColumn fx:id="QuestionsGrade" minWidth="0.0" prefWidth="70.0" text="Score" />
+               </columns>
+               <tooltip>
+                  <Tooltip text="To remove a question from this exam, click on it and click Remove" />
+               </tooltip>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </TableView>
+            <Button id="AddBtn" fx:id="AddBtn" layoutX="387.0" layoutY="137.0" mnemonicParsing="false" onAction="#AddQuesbtn" prefHeight="68.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-text-fill: #7030A0; -fx-border-width: 2; -fx-font-family: Dubai Light; -fx-font-size: 21;" text="Add">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button id="RemoveBtn" fx:id="RemoveBtn" layoutX="325.0" layoutY="242.0" mnemonicParsing="false" onAction="#RemoveQuestionBtn" prefHeight="60.0" prefWidth="137.0" style="-fx-background-color: transparent; -fx-text-fill: #7030A0; -fx-border-width: 2; -fx-font-family: Dubai Light; -fx-font-size: 21;" text="      Remove">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="615.0" layoutY="94.0" style="-fx-font-family: Dubai Light; -fx-font-size: 18; -fx-text-fill: purple;" text="The questions in exam:" />
+            <Label id="UploadLabel" cache="true" layoutX="29.0" layoutY="446.0" style="-fx-font-family: Dubai Light; -fx-font-size: 22; -fx-text-fill: purple;" text="Upload an offline exam here :" />
+            <RadioButton fx:id="OnlineRadioBtn" layoutX="32.0" layoutY="13.0" mnemonicParsing="false" onAction="#onlineExam" text="Online Examination">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Add an online exam" />
+               </tooltip></RadioButton>
+            <RadioButton fx:id="OfflineRadioBtn" layoutX="31.0" layoutY="367.0" mnemonicParsing="false" onAction="#offlineExam" text="Offline Examination">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Add an offline exam" />
+               </tooltip></RadioButton>
+            <Line endX="476.3333740234375" layoutX="433.0" layoutY="358.0" startX="-433.0" />
+            <ImageView fitHeight="43.0" fitWidth="42.0" layoutX="304.0" layoutY="446.0">
+               <image>
+                   <Image url="@../uploadBtn.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="UploadExamBtn" layoutX="304.0" layoutY="446.0" mnemonicParsing="false" onAction="#upload" prefHeight="43.0" prefWidth="42.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Choose a a file from your file system (must be .docx type)" />
+               </tooltip></Button>
+            <Button fx:id="changegradebtn" layoutX="757.0" layoutY="317.0" mnemonicParsing="false" onAction="#changegrade" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: white;" text="Change Score">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color blue="0.8784313797950745" green="0.34117648005485535" red="0.572549045085907" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="To change the score of a question, choose it from the table above and click Change Score" />
+               </tooltip>
+            </Button>
+            <ComboBox id="ExamBankComboBox" fx:id="ExamBankComboBox2" cache="true" layoutX="240.0" layoutY="390.0" onAction="#subjcet" prefHeight="30.0" prefWidth="182.0" promptText="Bank" style="-fx-background-color: white;">
+               <tooltip>
+                  <Tooltip text="Choose an exam bank that this exam will belong to" />
+               </tooltip>
+               <effect>
+                  <InnerShadow height="50.0" radius="12.0" width="0.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <ComboBox id="CourseComboBox" fx:id="CourseComboBox2" cache="true" layoutX="447.0" layoutY="390.0" onAction="#CourseCho" prefHeight="30.0" prefWidth="182.0" promptText="Course" style="-fx-background-color: white;">
+               <tooltip>
+                  <Tooltip text="Choose a course that this exam will belongs to" />
+               </tooltip>
+               <effect>
+                  <InnerShadow height="50.0" radius="12.0" width="0.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Label layoutX="220.0" layoutY="387.0" prefHeight="10.0" prefWidth="14.0" style="-fx-font-size: 30; -fx-text-fill: red; -fx-font-weight: bold;" text="*">
+               <tooltip>
+                  <Tooltip text="Obligatory!" />
+               </tooltip>
+            </Label>
+            <ProgressIndicator layoutX="413.0" layoutY="511.0" prefWidth="60.0" progress="0.33">
+               <tooltip>
+                  <Tooltip text="Next step is to add the exam's duration, execution code and possible comments for students or teachers" />
+               </tooltip></ProgressIndicator>
+            <Label layoutX="356.0" layoutY="468.0" style="-fx-font-size: 10;" text=".docx extension only" />
+         </children></AnchorPane>
+      <SplitPane orientation="VERTICAL" prefHeight="75.0" prefWidth="898.0" style="-fx-background-color: MEDIUMPURPLE;">
+         <items>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="892.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="126.0" layoutX="752.0" layoutY="6.0">
+                     <image>
+                         <Image url="@../nextBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="126.0" layoutX="11.0" layoutY="5.0">
+                     <image>
+                         <Image url="@../backBtn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button id="UploadExamBtn" fx:id="QuestionBackBtn" layoutX="11.0" layoutY="6.0" mnemonicParsing="false" onAction="#Backbtn" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="UploadExamBtn" fx:id="NextBtn" layoutX="752.0" layoutY="8.0" mnemonicParsing="false" onAction="#NextButton" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children></AnchorPane>
+         </items>
+      </SplitPane>
+  </items>
+</SplitPane>
